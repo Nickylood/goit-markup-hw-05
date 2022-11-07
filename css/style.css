@@ -29,8 +29,15 @@
             /* modal */
             --modal-window: rgba(0, 0, 0, 0.2);
             --border-modal-btn: 1px solid rgba(0, 0, 0, 0.1);
+            --border-px-fo: 0px 1px 3px rgba(0, 0, 0, 0.12),
+                0px 1px 1px rgba(0, 0, 0, 0.14),
+                0px 2px 1px rgba(0, 0, 0, 0.2);
             /* зминни */
             --idx-backdrop: 100;
+            /* overflow-color */
+            --overflow-color: rgba(33, 150, 243, 0.9);
+            /* transition transform ms */
+            --transfor-ms: 250ms;
 }
 .container {
     margin-left: auto;
@@ -302,7 +309,6 @@ p {
     width: 528px;
     min-height: 581px;
     background-color: var(--before-color);
-    
     border-radius: 4px;
 }
 .close-btn {
@@ -636,6 +642,42 @@ p {
     max-width: 100%;
     gap: 30px;
     
+}
+/* text pisition contents "9" */
+.team-thumb {
+    position: relative;
+    overflow: hidden;
+}
+.overflow {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transform: translateY(101%);
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--overflow-color);
+    transition: transform var(--transfor-ms)
+}
+.overflow-text {
+    padding-left: 24px;
+    padding-right: 24px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    
+    letter-spacing: 0.03em;
+    color: var(--before-color);
+}
+.border-fhoto:hover .overflow {
+    transform: translateY(0);
 }
 .project-portfolio {
     padding: 20px 24px;
